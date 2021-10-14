@@ -1,0 +1,71 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-color: #262626ff;
+}
+img{
+	position: absolute;
+	background-color: black;
+	height: 100px;
+	width: 100px;
+	border-radius: 10px;
+	z-index: 1;
+}
+div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 100px;
+	width: 100px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 60px black;
+	overflow: hidden;
+}
+div::after{
+	content: 'Facebook';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	right: 100%;
+	height: 100px;
+	width: 100px;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: cursive;
+	cursor: pointer;
+}
+div:hover{
+	animation: anime 0.5s linear forwards;
+	cursor: pointer;
+}
+div:hover img{
+	left: 0;
+	background-color: royalblue;
+
+}
+div:hover::after{
+	animation: slide 0.5s linear forwards;
+}
+@keyframes anime{
+	100%{
+		width: 300px;
+		background-color: royalblue;
+		box-shadow: 1px 1px 60px royalblue;
+	}
+}
+@keyframes slide{
+	100%{
+		right: -10%;
+		color: white;
+	}
+}
